@@ -99,7 +99,6 @@ body {
     max-width: 800px;
     text-align: center;
     width: 100%;
-    /* Make the cards take full width */
 }
 
 .container-secondary {
@@ -165,6 +164,30 @@ h2 {
 }
 
 @media (min-width: 1024px) {
+
+    .left-sidebar {
+        margin-left: 20px;
+    }
+
+    .right-sidebar {
+        margin-right: 20px;
+    }
+
+    .left .container-primary,
+    .container-secondary {
+        width: 70%;
+    }
+}
+
+@media (min-width: 1224px) {
+
+    .left-sidebar {
+        margin-left: 40px;
+    }
+
+    .right-sidebar {
+        margin-right: 40px;
+    }
 
     .container-primary,
     .container-secondary {
