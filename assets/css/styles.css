@@ -11,6 +11,14 @@
     --container-secondary-shadow: #de27ff50;
     --text-color: #63ffc9;
     --text-secondary-color: #ea71ff;
+    --sidebar-card-bg: #1a1a1a;
+    --sidebar-card-border: #444444;
+    --sidebar-card-shadow: #333333;
+    --sidebar-card-text: #1a1a1a;
+    --sidebar-card-header-bg: #0b3d30;
+    --sidebar-card-header-text: #dae2df;
+    --code-block-bg: #1a1a1a;
+    --code-block-border: #0d0d0d;
 }
 
 body {
@@ -46,7 +54,6 @@ body {
 
 .top-bar,
 .bottom-bar {
-    background-color: var(--sidebar-bg);
     color: var(--primary);
     text-align: center;
     padding: 10px;
@@ -62,8 +69,8 @@ body {
     flex: 1;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    background-color: var(--sidebar-bg);
+    align-items: center;
+
     padding: 20px;
 }
 
@@ -81,7 +88,8 @@ body {
 }
 
 .container-primary,
-.container-secondary {
+.container-secondary,
+.container-sidebar {
     background-color: var(--container-bg);
     border: 2px solid var(--container-border);
     padding: 15px 50px;
@@ -105,6 +113,19 @@ body {
     color: var(--text-secondary-color);
 }
 
+.sidebar .container-sidebar {
+    background-color: var(--sidebar-card-bg);
+    border: 2px solid var(--sidebar-card-border);
+    box-shadow: 0 0 20px 6px var(--sidebar-card-shadow);
+    color: var(--sidebar-card-text);
+}
+
+.sidebar .container-sidebar>* {
+    color: var(--sidebar-card-header-text);
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+}
+
 h1 {
     color: var(--primary);
 }
@@ -114,10 +135,15 @@ h2 {
 }
 
 .color-dark {
-    background-color: var(--sidebar-bg);
+    background-color: var(--code-block-bg);
+    border: 2px solid var(--code-block-border);
 }
 
-/* Media Queries for Responsive Design */
+.code-block {
+    background-color: var(--sidebar-card-bg);
+    border: 2px solid var(--sidebar-card-border);
+}
+
 @media (min-width: 768px) {
     .content-wrapper {
         flex-direction: row;
@@ -129,12 +155,12 @@ h2 {
 
     .sidebar {
         flex: 1;
+        align-items: center;
     }
 
     .container-primary,
     .container-secondary {
         width: 80%;
-        /* Adjust width for larger screens */
     }
 }
 
@@ -143,6 +169,5 @@ h2 {
     .container-primary,
     .container-secondary {
         width: 70%;
-        /* Adjust width for even larger screens */
     }
 }
