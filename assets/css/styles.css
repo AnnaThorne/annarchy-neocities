@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 :root {
 	--primary: #63ffc9;
 	--secondary: #ea71ff;
@@ -26,7 +29,7 @@
 }
 
 h1 {
-	font-family: "Sans Normalcy", "Nanum Gothic", Arial, sans-serif;
+	font-family: "Josefin Sans", "Nanum Gothic", Arial, sans-serif;
 }
 
 body {
@@ -149,6 +152,16 @@ body {
 	min-width: 100px;
 	max-width: 200px;
 	text-align: center;
+}
+.badge-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.badge-container > * {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 .sidebar {
 	max-width: 200px;
