@@ -25,6 +25,10 @@
 	--code-block-border: #0d0d2a;
 }
 
+h1 {
+	font-family: "Sans Normalcy", "Nanum Gothic", Arial, sans-serif;
+}
+
 body {
 	font-family: "Fira Code", monospace;
 	background-color: var(--background);
