@@ -195,6 +195,11 @@ ul {
 	margin-bottom: 3px;
 }
 
+.contact-list li > a {
+	color: var(--accent-color);
+	text-decoration: none;
+}
+
 .sidebar {
 	flex: 1;
 	display: flex;
@@ -337,7 +342,11 @@ ul {
 	text-decoration: none;
 }
 
-.blue-link:hover {
+.normal-link:hover {
+	text-decoration: underline;
+}
+
+.colored-link:hover {
 	text-decoration: underline;
 }
 
