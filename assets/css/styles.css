@@ -45,6 +45,10 @@
 	color: var(--accent-color);
 }
 
+span {
+	color: var(--accent-color);
+}
+
 @keyframes blink {
 	50% {
 		opacity: 0;
