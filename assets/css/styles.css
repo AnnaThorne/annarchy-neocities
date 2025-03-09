@@ -1,49 +1,102 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@900&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Source+Code+Pro:wght@500&display=swap");
 
 :root {
-	--primary: #63ffc9;
-	--secondary: #ea71ff;
-	--background: #0d0d0d;
-	--sidebar-bg: rgba(26, 26, 44, 0.5);
-	--sidebar-text-color: #63aaff;
-	--sidebar-color: #63aaff;
-	--sidebar-border: #63aaff;
-	--sidebar-container-bg: #63aaff;
-	--container-bg: #1b2223;
-	--container-secondary-bg: #19131a;
-	--container-border: #63ffc960;
-	--container-secondary-border: #de27ff60;
-	--container-shadow: #63ffc950;
-	--container-secondary-shadow: #de27ff50;
-	--text-color: #63ffc9;
-	--text-secondary-color: #ea71ff;
-	--sidebar-card-bg: #1a1a2a;
-	--sidebar-card-border: #444466;
-	--sidebar-card-shadow: #333355;
-	--sidebar-card-text: #1a1a2a;
-	--sidebar-card-header-bg: #0b3d50;
-	--sidebar-card-header-text: #dae2df;
-	--code-block-bg: #1a1a2a;
-	--code-block-border: #0d0d2a;
+	--title-font: "Archivo", sans-serif;
+	--body-font: "IBM Plex Sans", sans-serif;
+	--code-font: "Fira Code", monospace;
+
+	--accent-color: var(--deep-crimson);
+	--text-color: var(--silver-lining);
+	--background-color: var(--pitch-black);
+
+	/* These are the other colors beyond the accented ones. All of the themes uses these values. */
+	--pitch-black: rgb(6, 6, 6);
+	--dark-midnight: rgb(26, 26, 26);
+	--silver-lining: rgb(196, 196, 196);
+
+	/* These are the seven other values for the accents. Users can also simply just change the "--accent-color" variable to use any colors they want. */
+	--deep-crimson: rgb(255, 36, 60);
+	--mutant-green: rgb(0, 209, 66);
+	--skylight-blue: rgb(0, 184, 240);
+	--neon-orange: rgb(255, 142, 20);
+	--lipstick-pink: rgb(225, 101, 236);
+	--lavender-violet: rgb(144, 79, 247);
+	--seafoam-teal: rgb(54, 227, 184);
 }
 
-h1 {
-	font-family: "Josefin Sans", "Nanum Gothic", Arial, sans-serif;
+.index {
+	font-family: var(--title-font);
+	font-family: var(--accent-color);
+	letter-spacing: .016em;
+	text-indent: .25rem;
+	text-transform: uppercase;
+	cursor: default;
+	margin: 0;
+	line-height: 1.15;
+}
+
+@keyframes blink {
+	50% {
+		opacity: 0;
+	}
+}
+.blink {
+	animation: blink 1.5s linear infinite;
+}
+
+.foundation-intro > h2 {
+	color: var(--text-color);
+}
+.foundation-intro {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.foundation-intro > * {
+	cursor: default;
+	text-transform: uppercase;
+	font-family: var(--title-font);
+	color: var(--accent-color);
+	line-height: 0.7;
+}
+
+hr {
+	height: 0.0925rem;
+	border-top: 0.0625rem solid var(--accent-color);
+	background-color: var(--accent-color);
+	border: 0;
+	margin: 1ex 0;
+	padding: 0;
+}
+
+h1,
+h2,
+h3 {
+	color: var(--accent-color);
 }
 
 body {
-	font-family: "Fira Code", monospace;
-	background-color: var(--background);
+	font-family: var(--code-font);
+	background-color: var(--background-color);
+
 	color: var(--text-color);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
 	margin: 0;
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' width='100%25'%3E%3Cdefs%3E%3Cpattern id='doodad' width='20' height='20' viewBox='0 0 40 40' patternUnits='userSpaceOnUse' patternTransform='rotate(90)'%3E%3Crect width='100%25' height='100%25' fill='rgba(9, 11, 9,0.8)'/%3E%3Cpath d='M0 40h-10v-60h60L40 0L39 1h-38v38z' fill='rgba(26, 32, 44,1)'/%3E%3Cpath d='M40 0v10h60v60L0 40L1 39h38v-38z' fill='rgba(26, 97, 26,0.69)'/%3E%3Cpath d='M40 0v10h60v60L0 40L0 40h40v-40z' fill='rgba(26, 32, 44,1)'/%3E%3Cpath d='M0 40h-10v-60h60L40 0L40 0h-40v40z' fill='rgba(26, 97, 26,0.69)'/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23doodad)' height='200%25' width='200%25'/%3E%3C/svg%3E ");
-	background-size: 2000% 2000%;
+	background-size: 500%;
 	animation: moveBackground 1900s linear infinite;
+}
+
+ul {
+	list-style-type: none;
+}
+
+li:before {
+	content: "~ ";
+	margin: 0 0 0 -10px;
 }
 
 @keyframes moveBackground {
@@ -61,10 +114,45 @@ body {
 	width: 100%;
 	height: 100%;
 }
+.foundation-intro {
+	min-width: 400px;
+	max-width: 550px;
+}
+.foundation-logo {
+	size: 200px;
+	height: 100px;
+	width: 100px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.foundation-logo-filler {
+	size: 200px;
+	height: 100px;
+	width: 100px;
+}
+.top-bar {
+	display: flex;
+	flex-direction: row;
+	align-self: center;
+	justify-content: center;
+}
+
+.intro {
+	display: flex;
+	flex-direction: row;
+	align-items: start;
+	justify-content: start;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	line-height: 0px;
+}
+.intro > * {
+	margin: 0px;
+	padding: 0px;
+}
 
 .top-bar,
 .bottom-bar {
-	color: var(--primary);
 	text-align: center;
 	padding: 10px;
 }
@@ -102,8 +190,6 @@ body {
 	justify-content: flex-start;
 	align-items: center;
 	padding: 10px;
-	background-color: var(--sidebar-bg);
-	backdrop-filter: blur(6px);
 	border-radius: 10px;
 	height: 100%;
 }
@@ -128,6 +214,10 @@ body {
 
 .container-main {
 	margin: 15px auto;
+}
+
+.container-navigation > h3 {
+	text-align: center;
 }
 
 .container-navigation {
@@ -163,6 +253,14 @@ body {
 	flex-wrap: wrap;
 	justify-content: center;
 }
+
+.button-88 {
+	width: 88px;
+}
+.button-150 {
+	width: 150px;
+}
+
 .sidebar {
 	max-width: 200px;
 }
@@ -171,10 +269,6 @@ body {
 	background-color: var(--container-secondary-bg);
 	border: 2px solid var(--container-secondary-border);
 	box-shadow: 0 0 10px 6px var(--container-secondary-shadow);
-}
-
-.container-secondary > * {
-	color: var(--text-secondary-color);
 }
 
 .sidebar .container-sidebar {
@@ -195,14 +289,6 @@ body {
 .smol {
 	font-size: 6pt;
 }
-h1 {
-	color: var(--primary);
-}
-
-h2 {
-	color: var(--primary);
-}
-
 .color-dark {
 	background-color: var(--code-block-bg);
 }
@@ -230,15 +316,12 @@ h2 {
 	align-items: center;
 }
 
-.container-contact > * {
-	color: var(--sidebar-text-color);
-}
 .container-sidebar > * {
 	color: var(--sidebar-text-color);
 }
 
-.blue-link {
-	color: var(--sidebar-text-color);
+.normal-link {
+	color: var(--text-color);
 	text-decoration: none;
 }
 
@@ -246,12 +329,12 @@ h2 {
 	text-decoration: underline;
 }
 
-.purple-link {
-	color: var(--secondary);
+.colored-link {
+	color: var(--accent-color);
 	text-decoration: none;
 }
 
-.purple-link:hover {
+.colored-link:hover {
 	text-decoration: underline;
 }
 
