@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@900&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Source+Code+Pro:wght@500&display=swap");
+
 .foundation-diamond {
 	scale: 75%;
 }
@@ -7,9 +11,15 @@
 }
 
 :root {
+	--title-font: "Archivo", sans-serif;
+	--body-font: "IBM Plex Sans", sans-serif;
+	--code-font: "Fira Code", monospace;
+
 	--green: #59a06d;
 	--lightgreen: rgba(89, 160, 109, 0.25);
 	--blue: #5282b9;
+	--bnuy: #99d7fc;
+	--lightbbnuy: rgba(116, 195, 231, 0.192);
 	--lightblue: rgba(82, 130, 185, 0.25);
 	--yellow: #f0d93e;
 	--lightyellow: rgba(240, 217, 62, 0.25);
@@ -33,6 +43,138 @@
 		rgb(12, 12, 12) 90%,
 		rgb(12, 12, 12) 100%
 	);
+}
+
+.foundation-intro {
+	max-width: 600px;
+}
+
+.main-content {
+	max-width: 600px;
+}
+
+.main-info {
+	max-width: 600px;
+}
+
+.contain-img-holder {
+	display: flex;
+	justify-content: flex-end;
+	justify-self: flex-start;
+	float: right;
+	margin-left: auto;
+}
+.containment-class {
+	display: flex;
+	flex-direction: row;
+	background-color: var(--lightbbnuy);
+
+	gap: 20px;
+}
+
+.secondary-class {
+	display: flex;
+	flex-direction: row;
+	background-color: var(--lightblack);
+	gap: 20px;
+}
+
+.disruption-class {
+	display: flex;
+	flex-direction: row;
+	background-color: var(--lightred);
+	gap: 20px;
+}
+
+.risk-class {
+	display: flex;
+	flex-direction: row;
+	background-color: var(--lightblue);
+	gap: 20px;
+}
+
+.bnuy-padding {
+	width: 7px;
+	margin: 0px;
+	background-color: var(--bnuy);
+}
+
+.white-padding {
+	width: 7px;
+	margin: 0px;
+	background-color: var(--white);
+}
+
+.red-padding {
+	width: 7px;
+	margin: 0px;
+	background-color: var(--red);
+}
+
+.blue-padding {
+	width: 7px;
+	margin: 0px;
+	background-color: var(--blue);
+}
+
+.containment-info {
+	display: flex;
+	flex-direction: row;
+	justify-self: center;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	gap: 20px;
+}
+
+.circle-bnuy {
+	background-color: var(--bnuy);
+	border-radius: 50%;
+}
+
+.circle-thaumiel {
+	background-color: var(--white);
+	border-radius: 50%;
+}
+
+.circle-amida {
+	background-color: var(--red);
+	border-radius: 50%;
+}
+
+.circle-caution {
+	background-color: var(--blue);
+	border-radius: 50%;
+}
+
+.cont1,
+.cont2 {
+	display: flex;
+	flex-direction: column;
+	justify-self: center;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	gap: 5px;
+}
+
+.contain-img {
+	width: 50px;
+}
+
+.contain-class {
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.contain-class > * {
+	font-family: var(--body-font);
+	text-transform: uppercase;
+	text-align: left;
+}
+
+.contain-class p:nth-of-type(2) {
+	font-weight: bold;
 }
 
 body {
@@ -81,10 +223,6 @@ body {
 	color: white;
 }
 
-#generator {
-	margin: 5px;
-}
-
 h3,
 h4,
 p {
@@ -106,14 +244,8 @@ p {
 }
 
 #tileArea {
-	padding: 30px;
-	max-width: 800px;
 	background-repeat: repeat-x;
 	margin: auto;
-}
-
-h1 {
-	margin: 0;
 }
 
 header {
@@ -148,31 +280,12 @@ nav a:hover {
 }
 
 #acsbar {
-	padding: 10px;
-	width: 80%;
 	border: 1px solid black;
 	font-family: "Inter", sans-serif;
-	position: relative;
-}
-#resizeHandle {
-	position: absolute;
-	width: 10px;
-	height: calc(100% - 10px);
-	right: -4px;
-	border-right: 1px solid black;
-	cursor: e-resize;
 }
 
 .textdeconone {
 	text-decoration: none;
-}
-
-.min715 {
-	min-width: 715px;
-}
-
-.min560 {
-	min-width: 560px;
 }
 
 .colorwhite {
@@ -267,9 +380,6 @@ nav a:hover {
 	justify-self: center;
 	align-self: center;
 }
-#acsDiamondImg {
-	width: 115px;
-}
 #acsObjectTextCont {
 	height: 100%;
 	flex-direction: column;
@@ -322,8 +432,8 @@ nav a:hover {
 	left: 3px;
 }
 #acsObjectImageWrapper {
-	width: 85px;
-	height: 85px;
+	width: 65px;
+	height: 65px;
 }
 .borderright {
 	border-right: 8px solid var(--black);
@@ -388,10 +498,9 @@ nav a:hover {
 	display: flex;
 	align-items: center;
 }
-
 #top-quad {
+	transform: rotate(0deg);
 }
-
 #right-quad {
 	transform: rotate(90deg);
 }
@@ -457,11 +566,6 @@ nav a:hover {
 	grid-template-columns: auto;
 	font-family: "Inter", sans-serif;
 	border: 1px solid #bababb;
-}
-
-#bugNotice {
-	max-width: 250px;
-	grid-template-columns: Auto;
 }
 
 .nb {

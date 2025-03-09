@@ -37,6 +37,14 @@
 	line-height: 1.15;
 }
 
+.main-info > p {
+	font-family: var(--body-font);
+}
+.main-info > p > span {
+	font-weight: bold;
+	color: var(--accent-color);
+}
+
 @keyframes blink {
 	50% {
 		opacity: 0;
@@ -94,7 +102,7 @@ ul {
 	list-style-type: none;
 }
 
-li:before {
+.entity-list li:before {
 	content: "~ ";
 	margin: 0 0 0 -10px;
 }
