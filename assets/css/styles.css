@@ -49,11 +49,18 @@ span {
 	color: var(--accent-color);
 }
 
+@keyframes blink-reality {
+	50% {
+		opacity: 0;
+	}
+}
+
 @keyframes blink {
 	50% {
 		opacity: 0;
 	}
 }
+
 .blink {
 	animation: blink 1.5s linear infinite;
 }
@@ -129,6 +136,18 @@ ul {
 .foundation-intro {
 	min-width: 400px;
 	max-width: 550px;
+}
+
+.blinking-reality {
+	animation: blink-reality 3s linear infinite;
+}
+
+.red-reality {
+	size: 100px;
+	height: 70px;
+	width: 70px;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 .foundation-logo {
 	size: 200px;
